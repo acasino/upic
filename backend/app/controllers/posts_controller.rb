@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    # before_action :set_post, only: [:show, :destroy]
 
     #all posts
     def index
@@ -23,22 +24,25 @@ class PostsController < ApplicationController
     end
 
     #update post
-    def update
-        post = Post.find(params[:id])
-        post.destroy
+    # def update
 
-    end
+    # end
 
     #delete post
     def destroy
-
+        post = Post.find(params[:id])
+        post.destroy
     end
 
     private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_post
+        post = Post.find(params[:id])
+    end
 
     #only allow a list of trusted parameters through
     def post_params
-
+        params.require(:category).permit(:image, :caption, :hashtag)
     end
 
 end
