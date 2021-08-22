@@ -1,0 +1,36 @@
+body{
+    background:whitesmoke;
+    margin: 0;
+}
+
+header{
+    background: white;
+    padding: 10px;
+}
+
+div.container{
+    padding: 10px;
+}
+
+div.image{
+    background: white;
+    margin-top: 10px;
+}
+
+div.image img{
+    width: 100%;
+}
+
+div.image h2, div.image h3, div.image p{
+    padding: 10px;
+}
+
+div.container{
+    width: 600px;
+    margin: auto;
+}
+
+.hide {
+    display: none;
+}
+
