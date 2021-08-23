@@ -22,12 +22,14 @@
         </header>
 
         <!-- Form for post -->
-        <div>
+        <div id="new-post-section" class="container">
             <form class="form" id="post-form" >
                 <h3>Create New Post</h3>
-                <input type='file' id='image'> <br>
-                <h3>Caption:</h3>
-                <input type='text' name="caption" id="caption" >
+                <input type='file' id='post-image'> <br>
+                <label for="post-caption">Caption:</label>
+                <input type='text' name="caption" id="post-caption" ><br>
+                <label for="post-hashtag">Hashtag:</label>
+                <input type='text' name="hashtag" id="post-hashtag" ><br>
                 <input type="submit" value="Submit">
             </form>
         </div>  
