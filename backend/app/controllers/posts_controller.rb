@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: [:show, :destroy]
+    before_action :set_post, only: [:show, :update, :destroy]
 
     #all posts
     def index
-        @posts = Post.all
-        
-        render json: @posts
+        posts = Post.all
+        # posts = Post.includes(:upvotes)
+        render json: posts
     end
 
     #show one post
@@ -24,9 +24,9 @@ class PostsController < ApplicationController
     end
 
     #update post
-    # def update
+    def update
 
-    # end
+    end
 
     #delete post
     def destroy
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
     #only allow a list of trusted parameters through
     def post_params
-        params.require(:category).permit(:caption, :hashtag, :image)
+        params.require(:post).permit(:caption, :hashtag, :image)
     end
 
 end
