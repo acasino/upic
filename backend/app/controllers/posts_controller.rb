@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-    # before_action :set_post, only: [:show, :destroy]
+    before_action :set_post, only: [:show, :destroy]
 
     #all posts
     def index
-        posts = Post.all
+        @posts = Post.all
         
-        render json: posts
+        render json: @posts
     end
 
     #show one post
