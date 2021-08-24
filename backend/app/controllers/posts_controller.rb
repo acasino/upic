@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    protect_from_forgery
     before_action :set_post, only: [:show, :update, :destroy]
 
     #all posts
