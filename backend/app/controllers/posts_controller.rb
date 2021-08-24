@@ -15,9 +15,11 @@ class PostsController < ApplicationController
 
     #create new post
     def create
-        post = Post.new(post_params)
+        # post = Post.new(post_params)
+        post = Post.new(caption: params[:caption], hashtag: params[:hashtag], image: params[:image])
+        # respond_to_post()
         if post.save
-            render json: post, status: :created, location: post
+            render json: post#, status: :created, location: post
         else
             render json: post.errors, status: :unprocessable_entity
         end
@@ -44,5 +46,13 @@ class PostsController < ApplicationController
     def post_params
         params.require(:post).permit(:caption, :hashtag, :image)
     end
+
+    # # serializer for post
+    # def respond_to_post()
+    #     if post.valid?()
+    #     post_serializer = PostSerializer.new(post: post)
+    #     render json: post_serializer.serialize
+    #     end
+    # end
 
 end
