@@ -22,6 +22,7 @@ class postApi {
             },
             body: formData
         }).then(res => res.json())
+        debugger
     }
 
 
