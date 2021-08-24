@@ -15,7 +15,7 @@ class postApi {
         formData.append('caption', caption)
         formData.append('hashtag', hashtag)
 
-        fetch('http://localhost:3000/', {
+        fetch('http://localhost:3000/posts', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json'
