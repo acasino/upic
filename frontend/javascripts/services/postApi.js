@@ -23,8 +23,16 @@ class postApi {
             },
             body: formData
         }).then(res => res.json())
+        .then(json => {
+            let post = new Post(json)
+            postForm().requestFullscreen()
+            post.render()
+        })
     }
 
+    //handle update?
 
+
+    //handle delete
 
 }
