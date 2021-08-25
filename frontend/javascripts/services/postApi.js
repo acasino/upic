@@ -2,13 +2,14 @@ class postApi {
 
     static url = 'http://localhost:3000/posts'
 
-    static fetchPosts() {
+    static fetchPosts() { 
         fetch(this.url)
-        .then(resp => resp.json())
+        .then(resp => resp.json()) 
         .then(json => json.forEach(postObj => {
             // let post = Post.findOrCreateBy(postObj)
             const post = new Post(postObj)
             post.render()
+            debugger
         }))
         // .catch(this.handleError)
         .catch()
