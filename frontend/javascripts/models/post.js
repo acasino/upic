@@ -12,6 +12,10 @@ class Post {
         return this.all
     }
 
+    // static findOrCreateBy(postObj) {
+    //     return this.findByName(postObj.image) || new Post(postObj)
+    // }
+
     render() {
         const h4 = document.createElement("h4")
         const a = document.createElement("a")

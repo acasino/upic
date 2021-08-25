@@ -6,20 +6,22 @@ class postApi {
         fetch(this.url)
         .then(resp => resp.json())
         .then(json => json.forEach(postObj => {
-            let post = Post.findOrCreateBy(postObj)
+            // let post = Post.findOrCreateBy(postObj)
+            const post = new Post(postObj)
             post.render()
         }))
-        .catch(this.handleError)
+        // .catch(this.handleError)
+        .catch()
     }
 
-    static handleError(error) {
-        flash().innerText = error
-        flash().classtList.remove("hide")
-        setTimeout(() => {
-            flash().innerText = ""
-            flash().classList.add("hide")
-        }, 6000)
-    }
+    // static handleError(error) {
+    //     flash().innerText = error
+    //     flash().classtList.remove("hide")
+    //     setTimeout(() => {
+    //         flash().innerText = ""
+    //         flash().classList.add("hide")
+    //     }, 6000)
+    // }
 
     //handle submit
     static handleSubmit(e) {
