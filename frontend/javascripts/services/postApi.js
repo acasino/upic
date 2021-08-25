@@ -6,9 +6,19 @@ class postApi {
         fetch(this.url)
         .then(resp => resp.json())
         .then(json => json.forEach(postObj => {
-            Post.findOrCreateBy(postObj)
+            let post = Post.findOrCreateBy(postObj)
+            post.render()
         }))
-        // .catch(this.handleError)
+        .catch(this.handleError)
+    }
+
+    static handleError(error) {
+        flash().innerText = error
+        flash().classtList.remove("hide")
+        setTimeout(() => {
+            flash().innerText = ""
+            flash().classList.add("hide")
+        }, 6000)
     }
 
     //handle submit
