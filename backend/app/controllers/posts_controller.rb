@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-    protect_from_forgery
+    # protect_from_forgery
+    skip_before_action :verify_authenticity_token
     before_action :set_post, only: [:show, :update, :destroy]
 
     #all posts
