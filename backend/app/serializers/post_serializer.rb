@@ -1,6 +1,16 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :image, :caption, :hashtag
-  has_many :upvotes, except: [:created_at, :updated_at]
+  # attributes :id, :image, :caption, :hashtag
+  include Rails.application.routes.url_helpers
+
+  attributes :id, :caption, :hashtag, :image
+
+  def image
+    if object.image.attached?
+      rails_blob_url(object.image)
+    end
+  end
+
+  # has_many :upvotes, except: [:created_at, :updated_at]
 
   # def posts
   #   self.object.posts.map do |p|
