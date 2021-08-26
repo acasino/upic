@@ -4,13 +4,13 @@ class Post < ApplicationRecord
     has_one_attached :image
     has_many :upvotes
     
-    validates :image, {
-        presence: true
-    }
+    # validates :image, {
+    #     presence: true
+    # }
 
-    def get_image_url
-        url_for(self.image)
-    end
+    # def get_image_url
+    #     url_for(self.image)
+    # end
 
 
 end
