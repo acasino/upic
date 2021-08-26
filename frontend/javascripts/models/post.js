@@ -22,7 +22,11 @@ class Post {
         a.innerText = this.caption
         h4.appendChild(a)
         postSection().appendChild(h4)
-        debugger
+        
+        const div = document.createElement("div")
+        div.appendChild(url_for(post.image))
+        postSection().appendChild(div)
+
 
         /////
         // const postCaption = document.createElement('div')
