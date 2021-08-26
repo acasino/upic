@@ -22,10 +22,16 @@ class Post {
         a.innerText = this.caption
         h4.appendChild(a)
         postSection().appendChild(h4)
+
+        const h5 = document.createElement("h5")
+        const b = document.createElement("a")
+        b.innerText = this.id
+        h5.appendChild(b)
+        postSection().appendChild(h5)
         
-        const div = document.createElement("div")
-        div.appendChild(url_for(post.image))
-        postSection().appendChild(div)
+        // const div = document.createElement("div")
+        // // div.appendChild(url_for(post.image))
+        // postSection().appendChild(div)
 
 
         /////
