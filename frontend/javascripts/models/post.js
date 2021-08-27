@@ -33,6 +33,14 @@ class Post {
         img.src = this.image
         postSection().appendChild(img)
 
+        const delete_button = document.createElement("button")
+        debugger
+        delete_button.innerText = "Delete"
+        postSection().appendChild(delete_button)
+        delete_button.addEventListener("click", (e) => postApi.handleDelete)
+
+
+
 
         /////
         // const postCaption = document.createElement('div')
