@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     #show one post
     def show
         render json: post
+        
     end
 
     #create new post
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
 
     #only allow a list of trusted parameters through
     def post_params
-        params.require(:post).permit(:caption, :hashtag, :image)
+        params.require(:post).permit(:caption, :hashtag, :image, :id)
     end
 
     # # serializer for post
