@@ -52,9 +52,23 @@ class postApi {
         })
     }
 
-    //handle update?
-
+    //handle update
 
     //handle delete
-
+    static handleDelete = (e) => {
+        fetch(`http://localhost:3000/posts/${e.target.dataset.id}`, {
+            method: 'DELETE',
+            headers: {
+                "Content_Type": 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            e.target.parentNode.remove()
+            let post = Post.findById(parseInt(e.target.dataset.id))
+            let index = Post.all.indexOf(post)
+            Post.all.splice(index, 1)
+        })
+        .catch(this.handleError)
+    }
 }
