@@ -25,13 +25,13 @@ class Post {
 
         const h5 = document.createElement("h5")
         const b = document.createElement("a")
-        b.innerText = this.id
+        b.innerText = this.hashtag
         h5.appendChild(b)
         postSection().appendChild(h5)
-        
-        // const div = document.createElement("div")
-        // // div.appendChild(url_for(post.image))
-        // postSection().appendChild(div)
+
+        const img = document.createElement("img")
+        img.src = this.image
+        postSection().appendChild(img)
 
 
         /////
