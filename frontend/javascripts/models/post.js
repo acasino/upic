@@ -1,10 +1,11 @@
 class Post {
     static all = []
     
-    constructor({caption, hashtag, image = []}){
+    constructor({caption, hashtag, image, id = []}){
         this.caption = caption
         this.hashtag = hashtag
         this.image = image
+        this.id = id
         Post.all.push(this)
     }
 
@@ -34,15 +35,34 @@ class Post {
         postSection().appendChild(img)
 
         const delete_button = document.createElement("button")
-        debugger
         delete_button.innerText = "Delete"
+        delete_button.id = `delete-button-`+this.id
+        // delete_button.id = this.id
         postSection().appendChild(delete_button)
-        delete_button.addEventListener("click", (e) => postApi.handleDelete)
+
+        // delete_button.addEventListener("click", (e) => postApi.handleDelete)
+
+        // document.querySelector(`button.delete_button[id='${this.id}']`).addEventListener("click", (e) => postApi.handleDelete)
 
 
 
 
-        /////
+        // ///////
+        // let postAnchor = document.querySelector(`#post-${this.id}`)
+        // const li = document.createElement("li") 
+        // debugger
+        // postAnchor.dataset.postId = this.id
+        // li.innerHTML = `
+        // <strong class="post-caption">${post.caption}</strong><br>
+        // <span class="post-hashtag">${this.hashtag}</span><br>
+        // <img src="${this.image}><br>
+        // <button class="delete-post" data-id="${this.id}">Delete</button>
+        // `
+        // debugger
+        // postAnchor.dataset.postId = this.post_id
+
+
+        ////////
         // const postCaption = document.createElement('div')
         // postCaption.innerText = this.caption
 

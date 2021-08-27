@@ -9,7 +9,6 @@ class postApi {
             // let post = Post.findOrCreateBy(postObj)
             const post = new Post(postObj)
             post.render()
-            debugger
         }))
         // .catch(this.handleError)
         .catch()
