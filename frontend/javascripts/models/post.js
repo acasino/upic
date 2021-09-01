@@ -37,13 +37,13 @@ class Post {
         const delete_button = document.createElement("button")
         delete_button.innerText = "Delete"
         delete_button.id = `delete-button-`+this.id
+        delete_button.addEventListener('click', () => deletePost())
         // delete_button.id = this.id
         postSection().appendChild(delete_button)
 
+
         // delete_button.addEventListener("click", (e) => postApi.handleDelete)
-
         // document.querySelector(`button.delete_button[id='${this.id}']`).addEventListener("click", (e) => postApi.handleDelete)
-
 
 
 
@@ -75,8 +75,15 @@ class Post {
         // postSection().appendChild(postCaption)
         // postSection().appendChild(postHashtag)
         // postSection().appendChild(postImage)
+    }
 
+    //delete post
+    deletePost () {
+        const postUrl = `http://localhost:3000/posts/${this.id}`
+        const reqObj = {method: 'DELETE'}
 
+        fetch(postUrl, reqObj)
+        .then(postLi.remove())
 
     }
 
