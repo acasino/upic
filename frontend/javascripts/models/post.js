@@ -62,14 +62,15 @@ class Post {
         h4.innerText = this.caption
         p.innerText = this.hashtag
         img.src = this.image
-        deleteBtn.innerText = 'Delete'
-
-        postContainer.append(h4, p, img, deleteBtn)
+        
+        postContainer.append(img, h4, p, deleteBtn)
         postCard.append(postContainer)
         postArticle.append(postCard)
         postSection().append(postArticle)
-
-
+        
+        deleteBtn.innerText = 'Delete'
+        deleteBtn.className = 'delete'
+        deleteBtn.addEventListener('click', () => postApi.deletePost())        
 
 
 
