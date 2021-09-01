@@ -18,32 +18,65 @@ class Post {
     // }
 
     render() {
-        const h4 = document.createElement("h4")
-        const a = document.createElement("a")
-        a.innerText = this.caption
-        h4.appendChild(a)
-        postSection().appendChild(h4)
+        // const h4 = document.createElement("h4")
+        // const a = document.createElement("a")
+        // a.innerText = this.caption
+        // h4.appendChild(a)
+        // postSection().appendChild(h4)
 
-        const h5 = document.createElement("h5")
-        const b = document.createElement("a")
-        b.innerText = this.hashtag
-        h5.appendChild(b)
-        postSection().appendChild(h5)
+        // const h5 = document.createElement("h5")
+        // const b = document.createElement("a")
+        // b.innerText = this.hashtag
+        // h5.appendChild(b)
+        // postSection().appendChild(h5)
 
-        const img = document.createElement("img")
-        img.src = this.image
-        postSection().appendChild(img)
+        // const img = document.createElement("img")
+        // img.src = this.image
+        // postSection().appendChild(img)
 
-        const delete_button = document.createElement("button")
-        delete_button.innerText = "Delete"
-        delete_button.id = `delete-button-`+this.id
-        delete_button.addEventListener('click', () => deletePost())
-        // delete_button.id = this.id
-        postSection().appendChild(delete_button)
+        // const delete_button = document.createElement("button")
+        // delete_button.innerText = "Delete"
+        // delete_button.id = `delete-button-`+this.id
+        // delete_button.addEventListener('click', () => deletePost())
+        // // delete_button.id = this.id
+        // postSection().appendChild(delete_button)
+
+
 
 
         // delete_button.addEventListener("click", (e) => postApi.handleDelete)
         // document.querySelector(`button.delete_button[id='${this.id}']`).addEventListener("click", (e) => postApi.handleDelete)
+
+        // const postLi = document.createElement('li')
+        const postArticle = document.createElement('article')
+        const postCard = document.createElement("card")
+        const postContainer = document.createElement("container")
+        const h4 = document.createElement('h4')
+        const p = document.createElement('p')
+        const img = document.createElement("img")
+        const deleteBtn = document.createElement('button')
+
+        postCard.className = 'post-card'
+        postCard.dataset.id = this.id
+
+        h4.innerText = this.caption
+        p.innerText = this.hashtag
+        img.src = this.image
+        deleteBtn.innerText = 'Delete'
+
+        postContainer.append(h4, p, img, deleteBtn)
+        postCard.append(postContainer)
+        postArticle.append(postCard)
+        postSection().append(postArticle)
+
+
+
+
+
+
+
+
+
 
 
 
@@ -78,13 +111,13 @@ class Post {
     }
 
     //delete post
-    deletePost () {
-        const postUrl = `http://localhost:3000/posts/${this.id}`
-        const reqObj = {method: 'DELETE'}
+    // deletePost () {
+    //     const postUrl = `http://localhost:3000/posts/${this.id}`
+    //     const reqObj = {method: 'DELETE'}
 
-        fetch(postUrl, reqObj)
-        .then(postLi.remove())
+    //     fetch(postUrl, reqObj)
+    //     .then(postLi.remove())
 
-    }
+    // }
 
 }
