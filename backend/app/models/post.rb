@@ -2,7 +2,7 @@ class Post < ApplicationRecord
     include Rails.application.routes.url_helpers
     
     has_one_attached :image
-    has_many :upvotes
+    has_many :upvotes, :dependent => :destroy
     
     # validates :image, {
     #     presence: true
