@@ -108,10 +108,11 @@ class Post {
                 'Content-Type': 'application/json'
             }
         })
-        .then(resp => resp.json())
-        .then(json => {
-            event.target.parentNode.remove()
-        })
+        .then(event.target.parentNode.remove())
+        // .then(resp => resp.json())
+        // .then(json => {
+        //     event.target.parentNode.remove()
+        // })
         // .then(Post.postContainer[parseInt(event.target.parentNode.id)].remove())
     }
 
