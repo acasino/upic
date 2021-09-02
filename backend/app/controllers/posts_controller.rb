@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
     #show one post
     def show
+        post = Post.find(params[:id])
         render json: post
         
     end
