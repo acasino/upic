@@ -18,35 +18,6 @@ class Post {
     // }
 
     render() {
-        // const h4 = document.createElement("h4")
-        // const a = document.createElement("a")
-        // a.innerText = this.caption
-        // h4.appendChild(a)
-        // postSection().appendChild(h4)
-
-        // const h5 = document.createElement("h5")
-        // const b = document.createElement("a")
-        // b.innerText = this.hashtag
-        // h5.appendChild(b)
-        // postSection().appendChild(h5)
-
-        // const img = document.createElement("img")
-        // img.src = this.image
-        // postSection().appendChild(img)
-
-        // const delete_button = document.createElement("button")
-        // delete_button.innerText = "Delete"
-        // delete_button.id = `delete-button-`+this.id
-        // delete_button.addEventListener('click', () => deletePost())
-        // // delete_button.id = this.id
-        // postSection().appendChild(delete_button)
-
-
-
-
-        // delete_button.addEventListener("click", (e) => postApi.handleDelete)
-        // document.querySelector(`button.delete_button[id='${this.id}']`).addEventListener("click", (e) => postApi.handleDelete)
-
         // const postLi = document.createElement('li')
         const postArticle = document.createElement('article')
         const postCard = document.createElement("card")
@@ -62,6 +33,7 @@ class Post {
         h4.innerText = this.caption
         p.innerText = this.hashtag
         img.src = this.image
+        postContainer.id = this.id
         
         postContainer.append(img, h4, p, deleteBtn)
         postCard.append(postContainer)
@@ -70,13 +42,15 @@ class Post {
         
         deleteBtn.innerText = 'Delete'
         deleteBtn.className = 'delete'
-        deleteBtn.addEventListener('click', () => postApi.deletePost())        
-
-
-
-
-
-
+        deleteBtn.id = this.id
+        // deleteBtn.addEventListener('click', () => postApi.deletePost())        
+        // deleteBtn.addEventListener('click', () => Post.deletePost())        
+        // document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', () => Post.deletePost())      
+        // document.querySelector(`button.delete[id='${event.target.parentNode.id}']`).addEventListener('click', () => Post.deletePost())      
+        document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
+            debugger
+            Post.deletePost(event)      
+        })
 
 
 
@@ -110,6 +84,51 @@ class Post {
         // postSection().appendChild(postHashtag)
         // postSection().appendChild(postImage)
     }
+
+    //arrow version
+    // static deletePost = () => { 
+    //     debugger
+    //     fetch(`http://localhost:3000/posts/${this.id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             "Content_Type": 'application/json'
+    //         }
+    //     })
+    //     // .then(resp => resp.json())
+    //     .then(post.postCard.remove())
+        
+    // }
+
+    //standard function
+    static deletePost (event) { 
+        
+        fetch(`http://localhost:3000/posts/${event.target.parentNode.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            event.target.parentNode.remove()
+        })
+        // .then(Post.postContainer[parseInt(event.target.parentNode.id)].remove())
+    }
+
+    // static deletePost = (event) => { 
+    //     fetch(`http://localhost:3000/posts/${event.target.parentNode.id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             "Content-Type": 'application/json'
+    //         }
+    //     })
+    //     .then(resp => resp.json())
+    //     .then(json => {
+    //         event.target.parentNode.remove()
+    //     })
+    //     // .then(Post.postContainer[parseInt(event.target.parentNode.id)].remove())
+    // }    
+    
 
     //delete post
     // deletePost () {

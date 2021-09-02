@@ -55,7 +55,31 @@ class postApi {
     //handle update
 
     //handle delete
-    // static handleDelete = (e) => {
+    // static deletePost = (e) => {
+    //     debugger 
+    //     fetch(`http://localhost:3000/posts/${e.target.dataset.id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             "Content_Type": 'application/json'
+    //         }
+    //     })
+    //     // .then(resp => resp.json())
+    //     .then(post.postCard.remove())
+    // }
+
+    //deletePost
+    // static deletePost (e) {
+    //     debugger
+    //     const postUrl = `http://localhost:3000/posts/${this.id}`
+    //     const reqObj = {method: 'DELETE'}
+
+    //     fetch(postUrl, reqObj)
+    //     .then(post.postCard.remove())
+
+    // }
+
+    //v3
+    // static deletePost = (e) => {
     //     fetch(`http://localhost:3000/posts/${e.target.dataset.id}`, {
     //         method: 'DELETE',
     //         headers: {
@@ -72,14 +96,4 @@ class postApi {
     //     .catch(this.handleError)
     // }
 
-    //deletePost
-    static deletePost () {
-        const postUrl = `http://localhost:3000/posts/${this.id}`
-        const reqObj = {method: 'DELETE'}
-
-        debugger
-        fetch(postUrl, reqObj)
-        .then(post.postArticle.remove())
-
-    }
 }
