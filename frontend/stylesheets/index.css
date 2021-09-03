@@ -8,10 +8,6 @@ header{
     padding: 10px;
 }
 
-div.container{
-    padding: 10px;
-}
-
 div.image{
     background: white;
     margin-top: 10px;
@@ -26,8 +22,17 @@ div.image h2, div.image h3, div.image p{
 }
 
 div.container{
+    /* border: 12px solid #c9c9c9; */
+    padding: 10px;
     width: 600px;
     margin: auto;
+}
+
+article {
+    display: block;
+    border: 5px solid snow;
+    background-color: snow;
+    padding: 10px; 
 }
 
 .hide {

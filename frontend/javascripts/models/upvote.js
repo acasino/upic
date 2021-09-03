@@ -8,8 +8,12 @@ class Upvote {
         Upvote.all.push(this)
     }
 
+    render() {
+        //find the container id where we need to append the upvote value
+
+
+    }
 
 
 
-    
 }
