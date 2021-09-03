@@ -11,7 +11,7 @@ class UpvotesController < ApplicationController
         render json: upvote
     end
 
-    # #create new post
+    # #create new upvote
     def create
         upvote = Upvote.new(upvote_params)
 
@@ -22,24 +22,32 @@ class UpvotesController < ApplicationController
         end
     end
 
-    #update post
+    #update upvote
     # def update
-
+    #     if upvote.update(upvote_params)
+    #         render json: upvote
+    #     else
+    #         render json: upvote.errors, status: :unprocessable_entity
+    #     end
     # end
 
-    # #delete post
-    # def destroy
-
-    # end
+    # #delete upvote
+    def destroy
+        if upvote.destroy
+            render json: {message: "-1"}
+        else
+            render json: {message: "Something went wrong!"}
+        end
+    end
 
     # private
     # # Use callbacks to share common setup or constraints between actions.
-    # def set_post
-    #     post = Post.find(params[:id])
-    # end
+    def set_upvote
+        upvote = Upvote.find(params[:id])
+    end
 
-    # #only allow a list of trusted parameters through
-    # def post_params
-    #     params.require(:category).permit(:image, :caption, :hashtag)
-    # end    
+    #only allow a list of trusted parameters through
+    def post_params
+        params.require(:category).permit(:id, :post_id, :upvote_count)
+    end    
 end
