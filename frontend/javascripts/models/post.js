@@ -51,53 +51,19 @@ class Post {
             debugger
             Post.deletePost(event)      
         })
-
-
-
-
-        // ///////
-        // let postAnchor = document.querySelector(`#post-${this.id}`)
-        // const li = document.createElement("li") 
-        // debugger
-        // postAnchor.dataset.postId = this.id
-        // li.innerHTML = `
-        // <strong class="post-caption">${post.caption}</strong><br>
-        // <span class="post-hashtag">${this.hashtag}</span><br>
-        // <img src="${this.image}><br>
-        // <button class="delete-post" data-id="${this.id}">Delete</button>
-        // `
-        // debugger
-        // postAnchor.dataset.postId = this.post_id
-
-
-        ////////
-        // const postCaption = document.createElement('div')
-        // postCaption.innerText = this.caption
-
-        // const postHashtag = document.createElement('div')
-        // postHashtag.innerText = this.hashtag
-
-        // const postImage = document.createElement('div')
-        // postImage
-////
-        // postSection().appendChild(postCaption)
-        // postSection().appendChild(postHashtag)
-        // postSection().appendChild(postImage)
     }
 
-    //arrow version
-    // static deletePost = () => { 
-    //     debugger
-    //     fetch(`http://localhost:3000/posts/${this.id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             "Content_Type": 'application/json'
-    //         }
-    //     })
-    //     // .then(resp => resp.json())
-    //     .then(post.postCard.remove())
+    //retrive upvotes
+    getUpvotes() {
+
+    }
+
+    //renderUpvotes
+    renderUpvotes = (e) => {
         
-    // }
+    }
+
+
 
     //standard function
     static deletePost (event) { 
