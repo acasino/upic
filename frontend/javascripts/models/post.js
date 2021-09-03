@@ -55,12 +55,12 @@ class Post {
 
     //retrive upvotes
     getUpvotes() {
-
+        return Upvote.all.filter(upvote => this.id === upvote.post_id)
     }
 
     //renderUpvotes
     renderUpvotes = (e) => {
-        
+
     }
 
 
