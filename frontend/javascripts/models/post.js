@@ -48,9 +48,10 @@ class Post {
         // document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', () => Post.deletePost())      
         // document.querySelector(`button.delete[id='${event.target.parentNode.id}']`).addEventListener('click', () => Post.deletePost())      
         document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
-            debugger
             Post.deletePost(event)      
         })
+        upvoteApi.fetchUpvotes() 
+
     }
 
     // //retrive upvotes
