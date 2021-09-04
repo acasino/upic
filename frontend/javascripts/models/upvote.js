@@ -11,6 +11,7 @@ class Upvote {
     render() {
         //find the container id where we need to append the upvote value
         let postAnchor = document.querySelector(`.post-card > #${this.id}`)
+        debugger
         const li = document.createElement("li")
         li.innerHTML = `
         <span class="upvote_count">${this.upvote_count}</span>
