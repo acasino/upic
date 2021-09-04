@@ -42,6 +42,12 @@ class Upvote {
         else {
             console.log("No post_id associated")
         }
+        //addeventlistener
+        document.querySelector(`button.upvoteBtn[data-id='${this.id}']`).addEventListener('click', function(event) {
+            // debugger
+            upvoteApi.handleUpvote(event)      
+        })
+
     }
 
 

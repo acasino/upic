@@ -56,11 +56,11 @@ class Post {
     }
 
     // //retrive upvotes
-    getUpvotes() {
-        debugger
-        return Upvote.all.filter(upvote => this.id === upvote.post_id)
-        // upvote.render()
-    }
+    // getUpvotes() {
+    //     debugger
+    //     return Upvote.all.filter(upvote => this.id === upvote.post_id)
+    //     // upvote.render()
+    // }
 
     // //renderUpvotes which takes in click event
     renderUpvotes = (e) => {
