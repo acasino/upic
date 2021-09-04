@@ -1,5 +1,5 @@
 class UpvotesController < ApplicationController
-    # before_action :set_post, only: [:show, :destroy]
+    before_action :set_post, only: [:show, :update, :destroy]
 
     #all upvotes
     def index
@@ -17,12 +17,15 @@ class UpvotesController < ApplicationController
         upvote = Upvote.new(upvote_params)
 
         if upvote.save
-            render json: upvote, status: :created, location: upvote
+            render json: upvote#, status: :created, location: upvote
         else 
             render json: upvote.errors, status: :unprocessable_entity
         end
     end
 
+    def update
+
+    end
     #update upvote
     # def update
     #     if upvote.update(upvote_params)
@@ -34,6 +37,7 @@ class UpvotesController < ApplicationController
 
     # #delete upvote
     def destroy
+        upvote = Upvote.find(params[:id])
         if upvote.destroy
             render json: {message: "-1"}
         else
@@ -49,6 +53,6 @@ class UpvotesController < ApplicationController
 
     #only allow a list of trusted parameters through
     def post_params
-        params.require(:category).permit(:id, :post_id, :upvote_count)
+        params.require(:upvote).permit(:post_id, :upvote_count, :id)
     end    
 end
