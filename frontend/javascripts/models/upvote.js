@@ -33,7 +33,8 @@ class Upvote {
         const li = document.createElement("li")
         li.innerHTML = `
         <span class="post_id">Post ID: ${this.post_id}</span><br>
-        <span class="upvote_count">${this.upvote_count} Upvotes</span><br>
+        <p>Upvotes:</p>
+        <span class="upvote_count">${this.upvote_count}</span><br>
         <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>
         `
         postAnchor.appendChild(li)

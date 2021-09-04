@@ -16,8 +16,13 @@ class upvoteApi {
     //handleUpvote
     static handleUpvote(e) {
         // console.dir(e.target);  // use this in chrome
-        debugger
         e.preventDefault()
+        const data = {
+            upvote_count: e.target.parentElement.querySelector("span.upvote_count").innerHTML,
+            post_id: e.target.dataset.id,
+            id: e.target.dataset.id
+        }
+        debugger
         //grab current vote value
         // const currentVote = e.target[]
 
