@@ -23,17 +23,16 @@ class UpvotesController < ApplicationController
         end
     end
 
-    def update
 
+    # update upvote
+    def update
+        if upvote.update(upvote_params)
+            render json: upvote
+        else
+            render json: upvote.errors, status: :unprocessable_entity
+        end
     end
-    #update upvote
-    # def update
-    #     if upvote.update(upvote_params)
-    #         render json: upvote
-    #     else
-    #         render json: upvote.errors, status: :unprocessable_entity
-    #     end
-    # end
+
 
     # #delete upvote
     def destroy
