@@ -53,15 +53,15 @@ class Post {
         })
     }
 
-    //retrive upvotes
-    getUpvotes() {
-        return Upvote.all.filter(upvote => this.id === upvote.post_id)
-    }
+    // //retrive upvotes
+    // getUpvotes() {
+    //     return Upvote.all.filter(upvote => this.id === upvote.post_id)
+    // }
 
-    //renderUpvotes
-    renderUpvotes = (e) => {
+    // //renderUpvotes which takes in click event
+    // renderUpvotes = (e) => {
 
-    }
+    // }
 
 
 
