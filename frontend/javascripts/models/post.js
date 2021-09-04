@@ -50,19 +50,23 @@ class Post {
         document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
             Post.deletePost(event)      
         })
-        upvoteApi.fetchUpvotes() 
+        // upvoteApi.fetchUpvotes() 
+        // this.getUpvotes()
 
     }
 
     // //retrive upvotes
-    // getUpvotes() {
-    //     return Upvote.all.filter(upvote => this.id === upvote.post_id)
-    // }
+    getUpvotes() {
+        debugger
+        return Upvote.all.filter(upvote => this.id === upvote.post_id)
+        // upvote.render()
+    }
 
     // //renderUpvotes which takes in click event
-    // renderUpvotes = (e) => {
+    renderUpvotes = (e) => {
+        this.getUpvotes().forEach(upvote => upvote.render())
 
-    // }
+    }
 
 
 
