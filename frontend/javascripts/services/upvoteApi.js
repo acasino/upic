@@ -23,11 +23,20 @@ class upvoteApi {
             id: e.target.dataset.id
         }
         debugger
-        //grab current vote value
-        // const currentVote = e.target[]
-
-        // const 
-
+        fetch(`http://localhost:3000/upvotes/${data.id}`, {
+            method: 'PATCH'
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(json=> {
+            let upvote = Upvote.findById(json.id)
+            let updatedUpvote = upvote.update(json)
+            updatedUpvote.replaceElement(e.target.parentElement)
+        })
+        .catch(err => alert(err))
     }
 }
 
