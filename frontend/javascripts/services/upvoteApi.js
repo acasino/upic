@@ -16,7 +16,7 @@ class upvoteApi {
     //handleUpvote
     static handleUpvote(e) {
         // console.dir(e.target);  // use this in chrome
-        e.preventDefault()
+        // e.preventDefault()
         const data = {
             upvote_count: parseInt(e.target.parentElement.querySelector("span.upvote_count").innerHTML)+ 1,
             post_id: e.target.dataset.id,
