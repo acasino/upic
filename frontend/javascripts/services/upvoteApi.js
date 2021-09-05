@@ -24,7 +24,7 @@ class upvoteApi {
         }
         debugger
         fetch(`http://localhost:3000/upvotes/${data.id}`, {
-            method: 'PATCH'
+            method: 'PATCH',
             headers: {
                 "Content-Type": 'application/json'
             },

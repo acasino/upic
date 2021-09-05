@@ -12,6 +12,10 @@ class Upvote {
         return this.all
     }
 
+    static findById(id) {
+        return this.all.find(upvote => upvote.id === id)
+    }
+
 
     //look up post id and then apply
     getPost(){
