@@ -19,7 +19,6 @@ class Upvote {
     update({upvote_count}) {
         let upvote = Upvote.findById(this.id)
         upvote.upvote_count = upvote_count
-        debugger
         return upvote
     }
 
@@ -63,11 +62,11 @@ class Upvote {
     }
 
     replaceElement(li) {
-        let new_vote_count = this.upvote_count + 1
+        // let new_vote_count = this.upvote_count 
         li.innerHTML = `
         <span class="post_id">Post ID: ${this.post_id}</span><br>
         <p>Upvotes:</p>
-        <span class="upvote_count">${new_vote_count}</span><br>
+        <span class="upvote_count">${this.upvote_count}</span><br>
         <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>
         `
     }
