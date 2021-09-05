@@ -18,7 +18,7 @@ class upvoteApi {
         // console.dir(e.target);  // use this in chrome
         e.preventDefault()
         const data = {
-            upvote_count: (parseInt(e.target.parentElement.querySelector("span.upvote_count").innerHTML) + 1).toString,
+            upvote_count: (parseInt(e.target.parentElement.querySelector("span.upvote_count").innerHTML)+1).toString,
             post_id: e.target.dataset.id,
             id: e.target.dataset.id
         }
@@ -32,9 +32,9 @@ class upvoteApi {
         })
         .then(resp => resp.json())
         .then(json=> {
-            debugger
             let upvote = Upvote.findById(json.id)
             let updatedUpvote = upvote.update(json)
+            debugger
             updatedUpvote.replaceElement(e.target.parentElement)
         })
         .catch(err => alert(err))
