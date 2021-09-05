@@ -33,8 +33,8 @@ class upvoteApi {
         .then(resp => resp.json())
         .then(json=> {
             debugger
-            let oldUpvote = Upvote.findById(json.id)
-            let updatedUpvote = oldUpvote.update(json)
+            let upvote = Upvote.findById(json.id)
+            let updatedUpvote = upvote.update(json)
             updatedUpvote.replaceElement(e.target.parentElement)
         })
         .catch(err => alert(err))

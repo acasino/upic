@@ -16,6 +16,12 @@ class Upvote {
         return this.all.find(upvote => upvote.id === id)
     }
 
+    update({upvote_count}) {
+        let upvote = Upvote.findById(this.id)
+        upvote.upvote_count = upvote_count
+        return upvote
+    }
+
 
     //look up post id and then apply
     getPost(){
