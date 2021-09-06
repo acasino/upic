@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     postApi.fetchPosts()
     upvoteApi.fetchUpvotes()
     postForm().addEventListener("submit", postApi.handleSubmit)
+    // document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
+    //     Post.deletePost(event)      
+    // })
 
 })
 

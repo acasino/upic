@@ -30,14 +30,21 @@ div.container{
     padding: 10px;
     width: 600px;
     margin: auto;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 article {
+    height: auto;
     border-radius: 15px;
     display: block;
-    border: 5px solid whitesmoke;
+    border: 1px solid #dfdfdf;
     background-color: snow;
     padding: 15px;
+    margin-top: 40px;
+    margin-right: 10px;
+    /* justify-content: space-between; */
+    /* align-items: center; */
  } 
 
 .hide {
@@ -45,6 +52,35 @@ article {
 }
 
 img {
-    max-width: 85%;
-    max-height: 85%;
+    /* max-width: 85%;
+    max-height: 85%; */
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+div.container, h4 {
+    font-size: 16px;
+    align-items: center;
+}
+
+/* div.container h1 {
+    margin-right: 20px;
+}  */
+
+#main > header > div > h1  {
+    text-align: center;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 50px; */
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
 }
