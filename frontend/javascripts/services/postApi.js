@@ -49,6 +49,7 @@ class postApi {
             postForm().reset()
             post.render()
         })
+        
 
         // .then(postApi.handleNewUpvote())
     }
