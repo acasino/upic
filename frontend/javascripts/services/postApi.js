@@ -46,7 +46,7 @@ class postApi {
         }).then(res => res.json())
         .then(json => {
             let post = new Post(json)
-            postForm().requestFullscreen()
+            // postForm().requestFullscreen()
             post.render()
         })
     }

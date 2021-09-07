@@ -40,15 +40,14 @@ class Upvote {
             // let postAnchor = document.querySelector(`#post-section > article:nth-child(${this.id}) > card`)
             // let postAnchor = document.querySelector(`#post-section > card > #data-id[${this.id}]`)
             // postAnchor.dataset.id = this.post_id
-        const li = document.createElement("li")
-        li.innerHTML = `
-        <span class="post_id">Post ID: ${this.post_id}</span><br>
-        <div><strong>Upvotes:</strong></div>
-        <span class="upvote_count">${this.upvote_count}</span><br>
-        <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>
-        `
-        postAnchor.appendChild(li)
-
+            const li = document.createElement("li")
+            li.innerHTML = `
+            <span class="post_id">Post ID: ${this.post_id}</span><br>
+            <div><strong>Upvotes:</strong></div>
+            <span class="upvote_count">${this.upvote_count}</span><br>
+            <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>
+            `
+            postAnchor.appendChild(li)
         }
         else {
             console.log("No post_id associated")

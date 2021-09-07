@@ -37,6 +37,10 @@ class upvoteApi {
         })
         .catch(err => alert(err))
     }
+
+
+
+    
 }
 
 // static handleSubmit(e) {
