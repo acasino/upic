@@ -43,16 +43,18 @@ class Post {
         deleteBtn.innerText = 'Delete'
         deleteBtn.className = 'delete'
         deleteBtn.id = this.id
+
         // deleteBtn.addEventListener('click', () => postApi.deletePost())        
         // deleteBtn.addEventListener('click', () => Post.deletePost())        
         // document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', () => Post.deletePost())      
         // document.querySelector(`button.delete[id='${event.target.parentNode.id}']`).addEventListener('click', () => Post.deletePost())      
         
+
         document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
             Post.deletePost(event)      
         })
-
     }
+
 
     // //retrive upvotes
     // getUpvotes() {

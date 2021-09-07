@@ -5,9 +5,12 @@ class upvoteApi {
     static fetchUpvotes() { 
         fetch(this.url)
         .then(resp => resp.json()) 
-        .then(json => json.forEach(postObj => {
-            const upvote = new Upvote(postObj)
+        .then(json => json.forEach(upvoteObj => {
+            // const upvote = new Upvote(upvoteObj)
+            // upvote.render()
+            const upvote = Upvote.findOrCreateBy(upvoteObj)
             upvote.render()
+            // debugger
         }))
         // .catch(this.handleError)
         .catch()
@@ -38,9 +41,13 @@ class upvoteApi {
         .catch(err => alert(err))
     }
 
+    //handle newpost to set id
+    // static handleNewPost(e) {
+    //     debugger
+    // }
 
 
-    
+
 }
 
 // static handleSubmit(e) {

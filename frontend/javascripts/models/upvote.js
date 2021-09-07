@@ -16,6 +16,14 @@ class Upvote {
         return this.all.find(upvote => upvote.id === id)
     }
 
+    static findOrCreateBy(upvoteObj) {
+        return this.findById(upvoteObj.id) || new Upvote(upvoteObj)
+    }
+
+    static setUpvote(){
+
+    }
+
     update({upvote_count}) {
         let upvote = Upvote.findById(this.id)
         upvote.upvote_count = upvote_count

@@ -84,3 +84,11 @@ div.container, h4 {
     justify-content: center;
     padding: 5px 0;
 }
+
+.navbar-link{
+    display: inline-block;
+    color: black; 
+    font-weight: bold;
+    text-decoration: none;
+    margin: auto;
+}
