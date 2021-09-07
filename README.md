@@ -1,24 +1,29 @@
-# README
+# upic
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+"upic" is an image uploading and upvoting application. Upload your images, and see how popular they are!
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+This application can be installed by running:
 
-* System dependencies
+```bash
+git clone https://github.com/acasino/upic.git
+```
 
-* Configuration
+Run ```bundle install```
 
-* Database creation
+Then run ```rake db:migrate``` and ```rake db:seed```.
 
-* Database initialization
+Afterwards, you will need to start the server by running ```rails s```.
 
-* How to run the test suite
+## Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+The application can be opened by typing ```open index.html``` in your terminal. This will open a new window in your browser.
 
-* Deployment instructions
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* ...
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
