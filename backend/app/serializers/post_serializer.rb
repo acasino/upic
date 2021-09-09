@@ -1,5 +1,4 @@
 class PostSerializer < ActiveModel::Serializer
-  # attributes :id, :image, :caption, :hashtag
   include Rails.application.routes.url_helpers
 
   attributes :id, :caption, :hashtag, :image
