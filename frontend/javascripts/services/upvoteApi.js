@@ -3,6 +3,7 @@ class upvoteApi {
     static url = 'http://localhost:3000/upvotes'
 
     static fetchUpvotes() { 
+        debugger
         fetch(this.url)
         .then(resp => resp.json()) 
         .then(json => json.forEach(upvoteObj => {
