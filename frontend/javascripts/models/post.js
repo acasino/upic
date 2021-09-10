@@ -53,6 +53,7 @@ class Post {
         document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
             Post.deletePost(event)      
         })
+        // post.renderUpvotes()
     }
 
 
@@ -63,11 +64,12 @@ class Post {
     //     // upvote.render()
     // }
 
-    // //renderUpvotes which takes in click event
-    renderUpvotes = (e) => {
-        this.getUpvotes().forEach(upvote => upvote.render())
+    // // //renderUpvotes which takes in click event
+    // renderUpvotes = (e) => {
+    //     debugger
+    //     this.getUpvotes().forEach(upvote => upvote.render())
 
-    }
+    // }
 
 
 
