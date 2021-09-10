@@ -22,7 +22,7 @@ class upvoteApi {
         // e.preventDefault()
         const data = {
             upvote_count: parseInt(e.target.parentElement.querySelector("span.upvote_count").innerHTML)+ 1,
-            post_id: e.target.dataset.id,
+            // post_id: e.target.dataset.id,
             id: e.target.dataset.id
         }
         fetch(`http://localhost:3000/upvotes/${data.id}`, {

@@ -40,8 +40,9 @@ class Upvote {
     render() {
         //if there's a post_id present
         // post = this.getPost()
+        // debugger
         if (this.getPost()) {
-            const id = this.id
+            const id = this.post_id
             let postAnchor = document.querySelector(`[data-id=${CSS.escape(id)}]`)
         // if (parseInt(this.id) === parseInt(Post.id)) {
             //find the container id where we need to append the upvote value

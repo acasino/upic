@@ -75,6 +75,7 @@ class Post {
 
     //standard function
     static deletePost (event) { 
+        debugger
         
         fetch(`http://localhost:3000/posts/${event.target.parentNode.id}`, {
             method: 'DELETE',
@@ -82,7 +83,7 @@ class Post {
                 'Content-Type': 'application/json'
             }
         })
-        .then(event.target.parentNode.remove())
+        .then(event.target.parentNode.parentNode.parentElement.remove())
         // .then(resp => resp.json())
         // .then(json => {
         //     event.target.parentNode.remove()
