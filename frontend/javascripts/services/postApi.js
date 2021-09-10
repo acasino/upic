@@ -48,9 +48,8 @@ class postApi {
             let post = new Post(json)
             postForm().reset()
             post.render()
+            //render upvotes
         })
-        
-
         // .then(postApi.handleNewUpvote())
     }
 
