@@ -23,7 +23,7 @@ class PostsController < ApplicationController
         post = Post.new(caption: params[:caption], hashtag: params[:hashtag], image: params[:image])
         # respond_to_post()
         if post.save
-            Upvote.create(post_id: post.id)
+            Upvote.create(post_id: post.id, upvote_count: 0)
             render json: post#, status: :created, location: post
         else
             render json: post.errors, status: :unprocessable_entity

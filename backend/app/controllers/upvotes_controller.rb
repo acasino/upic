@@ -8,10 +8,10 @@ class UpvotesController < ApplicationController
         render json: @upvotes
     end
 
-    # def show
-    #     upvote = Upvote.find(params[:id])
-    #     render json: upvote
-    # end
+    def show
+        @upvote = Upvote.find(params[:id])
+        render json: @upvote
+    end
 
     # #create new upvote
     def create
