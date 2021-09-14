@@ -3,7 +3,7 @@ class upvoteApi {
     static url = 'http://localhost:3000/upvotes'
 
     static fetchUpvotes() { 
-        debugger
+        // debugger
         fetch(this.url)
         .then(resp => resp.json()) 
         .then(json => json.forEach(upvoteObj => {
@@ -26,7 +26,8 @@ class upvoteApi {
             // post_id: e.target.dataset.id,
             id: e.target.dataset.id
         }
-        fetch(`http://localhost:3000/upvotes/${data.id}`, {
+        debugger
+        fetch(`http://localhost:3000/upvotes/${e.target.dataset.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

@@ -47,7 +47,7 @@ class postApi {
         .then(json => {
             let post = new Post(json)
             postForm().reset()
-            post.render()
+            post.renderNew()
             // upvoteApi.fetchUpvotes()
             //render upvotes
         })
