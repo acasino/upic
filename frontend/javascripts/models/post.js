@@ -13,10 +13,6 @@ class Post {
         return this.all
     }
 
-    // static findOrCreateBy(postObj) {
-    //     return this.findByName(postObj.image) || new Post(postObj)
-    // }
-
     renderNew() {
         const postArticle = document.createElement('article')
         const postCard = document.createElement("card")
@@ -58,7 +54,6 @@ class Post {
     }
 
     render() {
-        // const postLi = document.createElement('li')
         const postArticle = document.createElement('article')
         const postCard = document.createElement("card")
         const postContainer = document.createElement("container")
@@ -84,36 +79,12 @@ class Post {
         deleteBtn.className = 'delete'
         deleteBtn.id = this.id
 
-        // deleteBtn.addEventListener('click', () => postApi.deletePost())        
-        // deleteBtn.addEventListener('click', () => Post.deletePost())        
-        // document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', () => Post.deletePost())      
-        // document.querySelector(`button.delete[id='${event.target.parentNode.id}']`).addEventListener('click', () => Post.deletePost())      
-        
-
         document.querySelector(`button.delete[id='${this.id}']`).addEventListener('click', function(event) {
             Post.deletePost(event)      
         })
-        // post.renderUpvotes()
     }
 
 
-    // //retrive upvotes
-    // getUpvotes() {
-    //     debugger
-    //     return Upvote.all.filter(upvote => this.id === upvote.post_id)
-    //     // upvote.render()
-    // }
-
-    // // //renderUpvotes which takes in click event
-    // renderUpvotes = (e) => {
-    //     debugger
-    //     this.getUpvotes().forEach(upvote => upvote.render())
-
-    // }
-
-
-
-    //standard function
     static deletePost (event) { 
         debugger
         
@@ -124,36 +95,6 @@ class Post {
             }
         })
         .then(event.target.parentNode.parentNode.parentElement.remove())
-        // .then(resp => resp.json())
-        // .then(json => {
-        //     event.target.parentNode.remove()
-        // })
-        // .then(Post.postContainer[parseInt(event.target.parentNode.id)].remove())
     }
-
-    // static deletePost = (event) => { 
-    //     fetch(`http://localhost:3000/posts/${event.target.parentNode.id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             "Content-Type": 'application/json'
-    //         }
-    //     })
-    //     .then(resp => resp.json())
-    //     .then(json => {
-    //         event.target.parentNode.remove()
-    //     })
-    //     // .then(Post.postContainer[parseInt(event.target.parentNode.id)].remove())
-    // }    
-    
-
-    //delete post
-    // deletePost () {
-    //     const postUrl = `http://localhost:3000/posts/${this.id}`
-    //     const reqObj = {method: 'DELETE'}
-
-    //     fetch(postUrl, reqObj)
-    //     .then(postLi.remove())
-
-    // }
 
 }
