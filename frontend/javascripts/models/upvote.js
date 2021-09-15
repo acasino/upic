@@ -41,7 +41,6 @@ class Upvote {
             let postAnchor = document.querySelector(`[data-id=${CSS.escape(id)}]`)
             const li = document.createElement("li")
             li.innerHTML = `
-            <span class="post_id">Post ID: ${this.post_id}</span><br>
             <div><strong>Upvotes:</strong></div>
             <span class="upvote_count">${this.upvote_count}</span><br>
             <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>
@@ -59,7 +58,6 @@ class Upvote {
 
     replaceElement(li) {
         li.innerHTML = `
-        <span class="post_id">Post ID: ${this.post_id}</span><br>
         <p>Upvotes:</p>
         <span class="upvote_count">${this.upvote_count}</span><br>
         <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>

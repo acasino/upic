@@ -6,7 +6,6 @@ class postApi {
         fetch(this.url)
         .then(resp => resp.json()) 
         .then(json => json.forEach(postObj => {
-            // let post = Post.findOrCreateBy(postObj)
             const post = new Post(postObj)
             post.render()
         }))
