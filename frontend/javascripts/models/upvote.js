@@ -20,10 +20,6 @@ class Upvote {
         return this.findById(upvoteObj.id) || new Upvote(upvoteObj)
     }
 
-    static setUpvote(){
-
-    }
-
     update({upvote_count}) {
         let upvote = Upvote.findById(this.id)
         upvote.upvote_count = upvote_count
@@ -31,7 +27,7 @@ class Upvote {
     }
 
     getPost(){
-        return Post.all.filter(post => this.id === post.id)
+        return Post.all.filter(post => this.post_id === post.id)
     }
 
 
@@ -41,6 +37,7 @@ class Upvote {
             let postAnchor = document.querySelector(`[data-id=${CSS.escape(id)}]`)
             const li = document.createElement("li")
             li.innerHTML = `
+            <span class="post_id">Post #: ${this.id}</span><br>
             <div><strong>Upvotes:</strong></div>
             <span class="upvote_count">${this.upvote_count}</span><br>
             <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>
@@ -58,6 +55,7 @@ class Upvote {
 
     replaceElement(li) {
         li.innerHTML = `
+        <span class="post_id">Post #: ${this.id}</span><br>
         <p>Upvotes:</p>
         <span class="upvote_count">${this.upvote_count}</span><br>
         <button class ="upvoteBtn" data-id="${this.id}">Upvote</button>

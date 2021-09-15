@@ -24,6 +24,7 @@ class Post {
         const li = document.createElement("li")
         
         li.innerHTML = `
+        <span class="post_id">Post #: ${this.id}</span><br>
         <div><strong>Upvotes:</strong></div>
         <span class="upvote_count">${0}</span><br>
         `
