@@ -13,15 +13,6 @@ class postApi {
         .catch()
     }
 
-    // static handleError(error) {
-    //     flash().innerText = error
-    //     flash().classtList.remove("hide")
-    //     setTimeout(() => {
-    //         flash().innerText = ""
-    //         flash().classList.add("hide")
-    //     }, 6000)
-    // }
-
     static handleSubmit(e) {
         e.preventDefault()
 
