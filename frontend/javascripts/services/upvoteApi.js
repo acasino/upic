@@ -20,7 +20,7 @@ class upvoteApi {
             // post_id: e.target.dataset.id,
             id: e.target.dataset.id
         }
-        debugger
+        
         fetch(`http://localhost:3000/upvotes/${e.target.dataset.id}`, {
             method: 'PATCH',
             headers: {
